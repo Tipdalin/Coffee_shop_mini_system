@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\ProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,8 +25,9 @@ Route::middleware('auth')->group(function () {
     Route::get('/admin', function () {
         return view('dashboard.admin');
     });
-
-    
+    Route::resource('products', ProductController::class)
+            ->only(['index', 'store', 'update', 'destroy']) // Define which methods to include
+            ->names('products');
 });
 });
 

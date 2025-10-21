@@ -92,7 +92,7 @@
         <div class="row align-items-center">
             <div class="col-12">
                 <div>
-                    <img src="https://i.pinimg.com/1200x/e8/32/b7/e832b77fecd24e738c2fc95ea7a639b4.jpg" alt="Coffee Cup" class="w-full h-auto rounded-lg shadow-lg">
+                    <img src="https://i.pinimg.com/1200x/19/cd/91/19cd9171fa108d27a068b0123d9823b1.jpg" alt="Coffee Cup" class="w-full h-auto rounded-lg shadow-lg">
                 </div>
             </div>
         </div>
@@ -108,7 +108,7 @@
             <img src="https://i.pinimg.com/736x/7e/01/af/7e01afc8389e08e17f6fdaad16bf327f.jpg" alt="Coffee and Donut" class="w-full h-full object-cover">
         </div>
         <div class="rounded-lg overflow-hidden shadow-md">
-            <img src="https://i.pinimg.com/736x/47/69/ec/4769ec94219404d07e8ec38e3841754a.jpg" alt="Iced Coffee on Car" class="w-full h-full object-cover">
+            <img src="https://i.pinimg.com/1200x/31/c7/c2/31c7c28c61f4e20d338382bee84fec72.jpg" alt="Iced Coffee on Car" class="w-full h-full object-cover">
         </div>
     </div>
 </section>
@@ -121,7 +121,7 @@
             
             @php
                 $drinks = [
-                    ['name' => 'Cacao Milk', 'tag' => 'Iced Americano', 'image' => 'https://i.pinimg.com/736x/ed/71/34/ed7134b9f61b417c807a779096a84cd7.jpg'],
+                    ['name' => 'Cacao Milk', 'tag' => 'Iced Americano', 'image' => 'https://i.pinimg.com/1200x/26/d2/f0/26d2f0c88bb62773109bd71212f005ed.jpg'],
                     ['name' => 'Iced Latte', 'tag' => 'Iced Latte', 'image' => 'https://i.pinimg.com/1200x/3e/48/b0/3e48b04c7939168367f3955d32d6c074.jpg'],
                     ['name' => 'Matcha Oat Milk', 'tag' => 'Matcha Oat Milk', 'image' => 'https://i.pinimg.com/1200x/9f/f6/8a/9ff68a04d6a45ca210b6473f0abbc23d.jpg'],
                 ];
@@ -144,7 +144,7 @@
 
 <section class="relative py-32 px-6" style="background-color: var(--color-cream);">
     <div class="absolute inset-0 bg-cover bg-center opacity-75" 
-         style="background-image: url('https://i.pinimg.com/1200x/f7/5c/51/f75c51faa63acaa103771024f34e1384.jpg');">
+         style="background-image: url('https://i.pinimg.com/1200x/d5/5b/22/d55b2289633afac8ef8aed017da4ea5f.jpg');">
     </div>
     <div class="relative max-w-7xl mx-auto text-center z-10">
         <h2 class="text-6xl font-logo text-warning mb-4" style="text-shadow: 2px 2px var(--color-maroon);">

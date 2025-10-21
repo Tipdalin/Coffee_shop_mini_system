@@ -1,0 +1,82 @@
+:root {
+    --maroon: #800000;
+    --maroon-light: #fbe6e6;
+    --dark-brown: #3e2723;
+}
+
+body {
+    background-color: #f7f9fc;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.dashboard-wrapper {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Sidebar Styles */
+.sidebar {
+    width: 280px;
+    background-color: #ffffff;
+    padding: 2rem;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.05);
+    flex-shrink: 0;
+}
+
+.dashboard-title {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.text-maroon {
+    color: var(--maroon) !important;
+}
+
+.bg-maroon {
+    background-color: var(--maroon) !important;
+}
+
+.bg-maroon-light {
+    background-color: var(--maroon-light) !important;
+}
+
+.btn-maroon {
+    background-color: var(--maroon);
+    border-color: var(--maroon);
+    color: white;
+}
+
+.btn-maroon:hover {
+    background-color: #6a0000;
+    border-color: #6a0000;
+    color: white;
+}
+
+.btn-outline-maroon {
+    color: var(--maroon);
+    border-color: var(--maroon);
+}
+
+.btn-outline-maroon:hover {
+    background-color: var(--maroon);
+    color: white;
+}
+
+.text-dark-brown {
+    color: var(--dark-brown) !important;
+}
+
+/* Main Content Styles */
+.main-content {
+    flex-grow: 1;
+}
+
+/* Card Styles */
+.stat-card {
+    border: none;
+    border-radius: 1rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.border-dashed {
+    border-style: dashed !important;
+}

@@ -8,8 +8,14 @@ use Illuminate\Database\Eloquent\Model;
 class Product extends Model
 {
     use HasFactory;
-    protected $fillable = ['name', 'description', 'price', 'category_id'];
+    protected $fillable = ['name', 'description', 'price', 'image', 'category_id'];
     
+    protected $casts = [
+        'price' => 'float',
+    ];
+
+    protected $with = ['category'];
+
     public function category()
     {
         return $this->belongsTo(Category::class);
