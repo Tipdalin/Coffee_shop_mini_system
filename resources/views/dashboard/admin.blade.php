@@ -9,7 +9,6 @@
         <div class="d-flex justify-content-between align-items-center mb-5">
             <h1 class="dashboard-title fs-2 mb-0">Dashboard Overview</h1>
         </div>
-        
         <div class="row g-4">
             <div class="col-12 col-sm-6 col-lg-3">
                 <div class="card stat-card p-4 bg-white">

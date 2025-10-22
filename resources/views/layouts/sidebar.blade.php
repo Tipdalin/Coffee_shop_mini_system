@@ -15,7 +15,7 @@
             </a>
         </li>
         <li class="nav-item mb-2">
-            <a class="nav-link text-dark-brown rounded-pill p-3" href="#">
+            <a class="nav-link text-dark-brown rounded-pill p-3" href="/dashboard/categories">
                 <i class="bi bi-people me-2"></i> Category
             </a>
         </li>

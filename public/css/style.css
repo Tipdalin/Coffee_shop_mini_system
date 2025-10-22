@@ -1,11 +1,12 @@
 :root {
     --maroon: #800000;
     --maroon-light: #fbe6e6;
+    --wheat: #F5F5D9;
     --dark-brown: #3e2723;
 }
 
 body {
-    background-color: #f7f9fc;
+    background-color: #ffffff;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
@@ -42,7 +43,7 @@ body {
 .btn-maroon {
     background-color: var(--maroon);
     border-color: var(--maroon);
-    color: white;
+    color: #F5F5D9;
 }
 
 .btn-maroon:hover {

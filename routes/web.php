@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\CategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,17 +21,6 @@ Route::get('/', function () {
     return view('user.user');
 });
 
-Route::middleware('auth')->group(function () {
-    Route::prefix('dashboard')->group(function () {
-    Route::get('/admin', function () {
-        return view('dashboard.admin');
-    });
-    Route::resource('products', ProductController::class)
-            ->only(['index', 'store', 'update', 'destroy']) // Define which methods to include
-            ->names('products');
-});
-});
-
 Route::controller(UserController::class)->group(function () {
     Route::prefix('auth')->group(function () {
         Route::get('/register', 'showregister');
@@ -40,5 +30,25 @@ Route::controller(UserController::class)->group(function () {
         
     });
 });
+
+Route::middleware('auth')->group(function () {
+    Route::prefix('dashboard')->group(function () {
+
+    //Admin Dashboard
+    Route::get('/admin', function () {
+        return view('dashboard.admin');
+    })->name('dashboard.admin');
+
+    Route::resource('products', ProductController::class)
+                    ->only(['index', 'store', 'update', 'destroy', 'create', 'edit']) 
+            ->names('products');
+
+    Route::resource('categories', CategoryController::class)
+                    ->only(['index', 'store', 'update', 'destroy', 'create', 'edit']) 
+            ->names('categories');
+});
+});
+
+
 
 require __DIR__.'/auth.php';

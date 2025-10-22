@@ -92,7 +92,7 @@
         <div class="row align-items-center">
             <div class="col-12">
                 <div>
-                    <img src="https://i.pinimg.com/1200x/19/cd/91/19cd9171fa108d27a068b0123d9823b1.jpg" alt="Coffee Cup" class="w-full h-auto rounded-lg shadow-lg">
+                    <img src="{{ asset('/assets/img/3.png') }}" alt="Coffee Cup" class="rounded-lg shadow-lg object-fit-cover w-full h-100">
                 </div>
             </div>
         </div>

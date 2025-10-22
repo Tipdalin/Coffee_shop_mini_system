@@ -5,44 +5,34 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Models\Category;
-// Use Laravel's built-in Storage facade for better file handling instead of File
 use Illuminate\Support\Facades\Storage;
-use App\Http\Requests\ProductRequest; // Best practice: Use this for complex validation (Keep in mind if you use this, you'll remove the inline $request->validate() calls)
 
 class ProductController extends Controller
 {
-    /**
-     * Display a listing of the resource. (Index)
-     */
+   
     public function index()
     {
-        // Eager load the category relationship to prevent the N+1 problem
         $products = Product::with('category')->paginate(15); 
         $categories = Category::all();
 
         return view('dashboard.products.index', compact('products', 'categories'));
     }
 
-    /**
-     * Store a newly created resource in storage. (Create)
-     * Renamed from addProduct to the RESTful 'store'.
-     */
+    
     public function store(Request $request)
     {
-        // 1. Validation: Use 'stock' to match migration, and Storage for files
         $validated = $request->validate([
             'name' => 'required|string|max:255',
-            'description' => 'nullable|string', // Assuming description can be nullable
+            'description' => 'nullable|string', 
             'price' => 'required|numeric|min:0.01',
-            'stock' => 'required|integer|min:0', // <--- CHANGED FROM 'qty' to 'stock'
+            'stock' => 'required|integer|min:0', 
             'category_id' => 'required|integer|exists:categories,id', 
-            'image' => 'required|image|max:2048', // max 2MB
+            'image' => 'required|image|max:2048', 
         ]);
 
         $imagePath = null;
         if ($request->hasFile('image')) {
-            // 2. Best Practice: Store file in 'storage/app/public' (or S3, etc.)
-            // The 'public' disk is configured to link to the public folder.
+            
             $imagePath = $request->file('image')->store('product_images', 'public');
         }
         
@@ -52,7 +42,7 @@ class ProductController extends Controller
             'price' => $validated['price'],
             'image' => $imagePath,
             'category_id' => $validated['category_id'],
-            'stock' => $validated['stock'], // <--- CHANGED FROM 'qty' to 'stock'
+            'stock' => $validated['stock'], 
         ]);
 
         if($product){

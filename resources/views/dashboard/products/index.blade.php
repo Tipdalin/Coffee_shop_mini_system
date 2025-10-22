@@ -1,7 +1,6 @@
 @extends('layouts.app') 
 @section('content')
 <body>
-
     <div class="dashboard-wrapper"> 
         <div class="main-content">
             @extends('layouts.navbar')

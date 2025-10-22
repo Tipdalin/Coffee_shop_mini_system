@@ -2,23 +2,23 @@
     <nav class="navbar navbar-expand-lg shadow-sm py-3">
         <div class="container-fluid px-4 px-md-5">
             <div class="d-flex align-items-center">
-                <button class="btn btn-sm btn-outline-secondary d-lg-none me-3" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasSidebar" aria-controls="offcanvasSidebar" aria-label="Toggle navigation">
+                <button class="btn btn-sm btn-light btn-outline-secondary d-lg-none me-3" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasSidebar" aria-controls="offcanvasSidebar" aria-label="Toggle navigation">
                     <i class="bi bi-list fs-5"></i>
                 </button>
                 <a class="navbar-brand dashboard-title fs-4 mb-0 text-dark-brown fw-bold" href="#">
-                    <span class="text-maroon">Perk Up</span> Coffee
+                    <span class="text-light">Perk Up Coffee </span> 
                 </a>
             </div>
             <!-- 3. User Actions (Bell and Profile Dropdown) -->
             <div class="d-flex align-items-center ms-auto">
                 <!-- Notification Bell -->
-                <button class="btn btn-outline-secondary rounded-circle" type="button" aria-label="Notifications">
+                <button class="btn btn-light rounded-circle" type="button" aria-label="Notifications">
                     <i class="bi bi-bell"></i>
                 </button>
                 
                 <!-- Profile Dropdown -->
                 <div class="ms-3 dropdown">
-                    <button class="btn p-0 d-flex align-items-center" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="User profile menu">
+                    <button class="btn btn-light p-0 d-flex align-items-center" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="User profile menu">
                         <div class="rounded-circle bg-maroon p-2 d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;">
                             <i class="bi bi-person-circle text-white fs-5"></i>
                         </div>
@@ -37,6 +37,6 @@
 </header>
 <style>
     .navbar{
-    background-color: var(--maroon-light) !important;
+    background-color: var(--maroon) !important;
     }
 </style>
