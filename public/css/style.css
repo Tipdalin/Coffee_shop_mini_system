@@ -1,0 +1,102 @@
+/* Color Variables */
+:root {
+    --maroon: #A6003E; /* Primary action color */
+    --maroon-dark: #7a0019;
+    --dark-brown: #333333; /* For text and headings */
+    --bg-light: #f4f7f9; /* Soft dashboard background */
+    --shadow-light: 0 4px 12px rgba(0, 0, 0, 0.08); /* Soft container shadow */
+    --shadow-deep: 0 6px 12px rgba(166, 0, 62, 0.4); /* Button action shadow */
+}
+
+/* Global Styles */
+body {
+    background-color: var(--bg-light);
+    font-family: 'Inter', sans-serif;
+    min-height: 100vh;
+    color: var(--dark-brown);
+}
+
+/* Layout Wrapper for Sidebar + Content */
+#wrapper {
+    display: flex;
+}
+
+/* Cards & Containers */
+.stat-card {
+    border-radius: 20px; /* Large radius for modern feel */
+    box-shadow: var(--shadow-light);
+    border: none;
+    overflow: hidden;
+}
+
+/* Primary Button Style */
+.btn-maroon {
+    background-color: var(--maroon);
+    color: white;
+    border: none;
+    padding: 10px 24px;
+    border-radius: 50px; /* Pill shape */
+    transition: all 0.2s ease-in-out;
+    box-shadow: 0 4px 6px rgba(166, 0, 62, 0.3);
+}
+.btn-maroon:hover {
+    background-color: var(--maroon-dark);
+    box-shadow: var(--shadow-deep);
+    transform: translateY(-1px);
+    color: white;
+}
+
+/* Typography & Forms */
+.dashboard-title {
+    color: var(--dark-brown);
+    font-weight: 800;
+    letter-spacing: -1px;
+}
+.text-maroon {
+    color: var(--maroon) !important;
+}
+.form-control, .form-select, .form-label {
+    font-size: 0.95rem;
+}
+
+/* Navbar Specific Styles */
+.custom-navbar {
+    background-color: #ffffff !important; 
+    box-shadow: var(--shadow-light); 
+    border-radius: 0 0 20px 20px; 
+    padding-top: 1rem !important;
+    padding-bottom: 1rem !important;
+    z-index: 1020; /* Ensure it stays above content but below modals */
+}
+.navbar-toggle-btn {
+    border: 1px solid #e0e0e0;
+    background-color: var(--bg-light);
+    transition: all 0.2s;
+    padding: 8px 12px;
+    border-radius: 12px; 
+}
+.navbar-toggle-btn:hover {
+    border-color: var(--maroon);
+    background-color: #ffffff;
+}
+.navbar-icon-btn {
+    color: var(--dark-brown);
+    background-color: var(--bg-light);
+    transition: all 0.2s;
+    padding: 0.65rem;
+    border-radius: 50%; 
+}
+.navbar-icon-btn:hover {
+    background-color: var(--maroon);
+    color: white;
+}
+.profile-icon-wrapper {
+    width: 40px; 
+    height: 40px;
+    background-color: var(--maroon);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

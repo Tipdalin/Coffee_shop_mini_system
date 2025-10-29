@@ -1,0 +1,43 @@
+/* Sidebar (Desktop) */
+.sidebar {
+    width: 260px; 
+    padding: 2.5rem 1.25rem; 
+    background-color: #ffffff; 
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); 
+    position: sticky;
+    top: 0;
+    height: 100vh; 
+    flex-shrink: 0; /* Prevents it from shrinking */
+}
+.sidebar .dashboard-title {
+    font-size: 1.6rem !important;
+    font-weight: 900 !important;
+    letter-spacing: -0.5px;
+}
+.sidebar .nav-link, 
+.offcanvas-body .nav-link {
+    color: var(--dark-brown) !important;
+    transition: all 0.2s ease;
+    padding: 0.75rem 1.25rem !important;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+.sidebar .nav-link:not(.active):hover,
+.offcanvas-body .nav-link:not(.active):hover {
+    background-color: #f0f0f0; 
+    transform: translateX(2px);
+}
+.sidebar .nav-link.active,
+.offcanvas-body .nav-link.active {
+    background-color: #fcebeb !important; 
+    color: var(--maroon) !important;
+    box-shadow: 0 2px 4px rgba(166, 0, 62, 0.1);
+}
+
+/* Offcanvas (Mobile) */
+.offcanvas-custom-body {
+    background-color: #ffffff;
+}
+.offcanvas-header .dashboard-title {
+    font-weight: 800;
+}
