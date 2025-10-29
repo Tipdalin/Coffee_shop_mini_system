@@ -1,72 +1,65 @@
-const placeholderImage = "{{ asset('assets/pl.jpg') }}";
+/**
+ * JavaScript to handle the dynamic activation of sidebar and offcanvas navigation links.
+ * This script now ensures the correct link is highlighted and then manually triggers navigation.
+ */
 
-    $(document).ready(function () {
-        // ---------------------------------------------------
-        // Image Preview Logic
-        // ---------------------------------------------------
-        $('#product-img-preview').on('click', function () {
-            $('#image-upload').click();
+document.addEventListener('DOMContentLoaded', () => {
+    // Select all navigation links across both the sidebar and the offcanvas menu.
+    const navLinks = document.querySelectorAll('.nav-link.rounded-pill');
+
+    if (navLinks.length === 0) {
+        console.warn("No navigation links found with class '.nav-link.rounded-pill'.");
+        return;
+    }
+
+    // Function to handle the active class update
+    const activateLink = (clickedLink) => {
+        // 1. Remove 'active' class from all links
+        navLinks.forEach(link => {
+            link.classList.remove('active');
         });
 
-        $('#image-upload').on('change', function () {
-            const file = this.files[0];
-            if (file) {
-                const img = URL.createObjectURL(file);
-                $('#product-img-preview').attr('src', img);
-            }
-        });
-
-        $('#add-product-btn').on('click', function(){
-            $('#productModalLabel').text('Add New Product');
-            $('#product-form')[0].reset();
-            $('#product-form').attr('action', "{{ route('products.store') }}");
-            $('#form-method').val('POST');
-            $('#update-btn').addClass('d-none');
-            $('#save-btn').removeClass('d-none');
-            $('#product-img-preview').attr('src', placeholderImage);
-            $('.form-control').removeClass('is-invalid');
-            $('.text-danger').remove();
-        });
-
-        $(document).on('click', '.edit-btn', function(){
-            const id = $(this).data('id');
-            const name = $(this).data('name');
-            const description = $(this).data('description');
-            const price = $(this).data('price');
-            const stock = $(this).data('stock');
-            const categoryId = $(this).data('category-id');
-            const image = $(this).data('image');
-
-            $('#productModalLabel').text('Edit Product: ' + name);
-            
-            // Set form action and method for UPDATE
-            const updateUrl = '{{ route("products.update", ":id") }}'.replace(':id', id);
-            $('#product-form').attr('action', updateUrl);
-            $('#form-method').val('PUT'); 
-            
-            // Show/Hide buttons (Updated button classes)
-            $('#update-btn').removeClass('d-none');
-            $('#save-btn').addClass('d-none');
-
-            // Populate fields
-            $('#product-id').val(id);
-            $('#name').val(name);
-            $('#description').val(description);
-            $('#price').val(price);
-            $('#stock').val(stock);
-            $('#category_id').val(categoryId);
-            
-            // Set image preview
-            $('#product-img-preview').attr('src', image);
-            
-            // Clear previous image input field 
-            $('#image-upload').val(''); 
-        });
-
+        // 2. Add 'active' class to the clicked link's target (itself and its counterpart)
+        const href = clickedLink.getAttribute('href');
         
-        $(document).on('click', '.delete-btn', function(e) {
-            if (!confirm('Are you sure you want to delete this product? This action cannot be undone.')) {
-                e.preventDefault();
+        // Find all links that share the same href and activate them
+        document.querySelectorAll(`.nav-link[href="${href}"]`).forEach(link => {
+            link.classList.add('active');
+        });
+
+        // 3. If in offcanvas, close the offcanvas menu after selection (improves mobile UX)
+        const offcanvasElement = document.getElementById('offcanvasSidebar');
+        if (clickedLink.closest('#offcanvasSidebar') && offcanvasElement) {
+            const bsOffcanvas = bootstrap.Offcanvas.getInstance(offcanvasElement) || new bootstrap.Offcanvas(offcanvasElement);
+            bsOffcanvas.hide();
+        }
+
+        return href; // Return the href to allow navigation
+    };
+
+    // Attach event listeners to all links
+    navLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            // Stop the default navigation action
+            e.preventDefault(); 
+            
+            // Get the target URL after activating the link state
+            const targetUrl = activateLink(link);
+            
+            // Manually trigger navigation
+            if (targetUrl && targetUrl !== '#' && targetUrl !== window.location.pathname) {
+                window.location.href = targetUrl;
             }
         });
     });
+
+    // Highlight the correct link on initial load based on current URL path
+    const currentPath = window.location.pathname;
+    navLinks.forEach(link => {
+        if (link.getAttribute('href') === currentPath) {
+            // We use the full activation logic here for consistency
+            activateLink(link); 
+        }
+    });
+
+});

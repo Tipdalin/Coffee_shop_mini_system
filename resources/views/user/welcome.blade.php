@@ -7,7 +7,6 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 <script src="https://cdn.tailwindcss.com"></script>
 <style>
-    /* Custom Color and Font Styles for Perk Up Coffee Vibe */
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700;800;900&family=Inter:wght@300;400;500;600;700&display=swap');
     
     :root {
@@ -15,8 +14,6 @@
         --color-cream: #fbf5e4;  /* Light Cream/Yellowish - from template */
         --color-dark-brown: #2e1c1c; /* Dark Text/Accent */
     }
-
-    /* Override Tailwind/Base styles with custom properties */
     * {
         font-family: 'Inter', sans-serif;
     }
@@ -42,8 +39,6 @@
     .smooth-scroll {
         scroll-behavior: smooth;
     }
-    
-    /* Product Card Hover Effect */
     .hover-lift {
         transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
@@ -52,7 +47,6 @@
         box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
     }
     .aspect-product {
-        /* Standardizing product image size to match template cards */
         aspect-ratio: 1 / 1.5; 
     }
     #about{
@@ -92,7 +86,7 @@
         <div class="row align-items-center">
             <div class="col-12">
                 <div>
-                    <img src="{{ asset('/assets/img/3.png') }}" alt="Coffee Cup" class="rounded-lg shadow-lg object-fit-cover w-full h-100">
+                    <img src="{{ asset('/assets/img/4.jpg') }}" alt="Coffee Cup" class="rounded-lg shadow-lg object-fit-cover w-full h-100">
                 </div>
             </div>
         </div>

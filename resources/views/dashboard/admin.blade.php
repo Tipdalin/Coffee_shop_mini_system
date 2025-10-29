@@ -4,7 +4,6 @@
 @section('content')
 
 <div class="main-content">
-    @include('layouts.navbar')
     <div class="container-fluid p-5">
         <div class="d-flex justify-content-between align-items-center mb-5">
             <h1 class="dashboard-title fs-2 mb-0">Dashboard Overview</h1>
@@ -21,7 +20,7 @@
                                 Total Users
                             </p>
                             <h3 class="fw-bolder mb-0 text-dark-brown fs-2">
-                                12,458
+                                4,320
                             </h3>
                         </div>
                     </div>
@@ -50,11 +49,11 @@
                 <div class="card stat-card p-4 bg-white">
                     <div class="d-flex align-items-center">
                         <div class="me-4 p-3 rounded-circle bg-info-subtle flex-shrink-0">
-                            <i class="bi bi-receipt-cutoff text-info fs-3"></i>
+                            <i class="bi bi-bag-check text-info fs-5 "></i>
                         </div>
                         <div>
                             <p class="text-muted mb-1 fw-bold text-uppercase small">
-                                Monthly Orders
+                                Products
                             </p>
                             <h3 class="fw-bolder mb-0 text-dark-brown fs-2">
                                 1,875
@@ -67,17 +66,17 @@
             <div class="col-12 col-sm-6 col-lg-3">
                 <div class="card stat-card p-4 bg-white">
                     <div class="d-flex align-items-center">
-                        <div class="me-4 p-3 rounded-circle bg-warning-subtle flex-shrink-0">
-                            <i class="bi bi-person-add text-warning fs-3"></i>
-                        </div>
+                        <div class="me-4 p-3 rounded-circle bg-info-subtle flex-shrink-0">
+                            <i class="bi bi-receipt-cutoff text-info fs-3"></i>
+                        </div>  
                         <div>
                             <p class="text-muted mb-1 fw-bold text-uppercase small">
-                                New Signups
+                                Total Orders
                             </p>
                             <h3 class="fw-bolder mb-0 text-dark-brown fs-2">
-                                47
+                                1,875
                             </h3>
-                        </div>
+                        </div>                    
                     </div>
                 </div>
             </div>

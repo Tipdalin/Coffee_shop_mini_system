@@ -17,47 +17,99 @@
             --color-dark-brown: #2e1c1c; /* Dark Text/Accent */
         }
         
-        /* Apply Inter as the default text font */
         body {
             font-family: 'Inter', sans-serif;
-            background-color: var(--color-cream); /* Use cream background for the page */
+            background-color: var(--color-cream);
         }
         
-        /* Custom logo/heading font for a striking look */
         .font-logo {
             font-family: 'Poppins', sans-serif;
             font-weight: 900;
         }
 
-        /* Override Bootstrap button primary color for the maroon style */
+        /* --- Custom Styles and Animations --- */
+        
         .btn-maroon {
             background-color: var(--color-maroon);
             border-color: var(--color-maroon);
             color: white;
-            transition: background-color 0.2s;
+            transition: all 0.2s ease-in-out; /* Add transition for animation */
         }
         .btn-maroon:hover {
-            background-color: #55120a; /* Slightly darker maroon on hover */
+            background-color: #55120a; 
             border-color: #55120a;
             color: white;
+            /* Button hover animation */
+            transform: translateY(-2px) scale(1.01);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .form-control {
+            transition: all 0.3s ease;
         }
         .form-control:focus {
             border-color: var(--color-maroon);
-            box-shadow: 0 0 0 0.25rem rgba(107, 22, 11, 0.25); /* Maroon ring focus */
+            /* Animated input focus glow */
+            box-shadow: 0 0 0 0.25rem rgba(107, 22, 11, 0.4); 
+            transform: scale(1.005);
         }
+
         .text-maroon {
             color: var(--color-maroon) !important;
         }
+        
+        /* 1. Card Slide-In Animation */
+        @keyframes slideInFade {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animated-card {
+            opacity: 0;
+            animation: slideInFade 0.8s ease-out forwards;
+        }
+
+        /* 2. Background Image Parallax/Subtle Move */
+        @keyframes subtlePan {
+            0% { background-position: center 50%; }
+            50% { background-position: center 48%; }
+            100% { background-position: center 50%; }
+        }
+
+        .animated-bg {
+            animation: subtlePan 15s ease-in-out infinite;
+        }
+
+        /* 3. Logo Jiggle Animation */
+        @keyframes logoJiggle {
+            0%, 100% { transform: rotate(0deg); }
+            10% { transform: rotate(-0.5deg); }
+            20% { transform: rotate(0.5deg); }
+            30% { transform: rotate(-0.25deg); }
+            40% { transform: rotate(0.25deg); }
+            50% { transform: rotate(0deg); }
+        }
+
+        .logo-jiggle:hover {
+            animation: logoJiggle 0.5s ease-in-out;
+        }
+
     </style>
 </head>
 
 <body class="min-vh-100 d-flex align-items-center justify-content-center py-5">
     
     <div class="container-fluid">
-        <div class="row g-0 rounded-4 overflow-hidden shadow-lg" style="max-width: 900px; margin: auto;">
+        <div class="row g-0 rounded-4 overflow-hidden shadow-lg animated-card" style="max-width: 900px; margin: auto;">
             
             <div class="col-md-6 d-none d-md-block">
-                <div class="w-100 h-100 bg-cover bg-center" style="
+                <div class="w-100 h-100 bg-cover bg-center animated-bg" style="
                     background-image: url('https://i.pinimg.com/736x/f5/af/34/f5af34c3fa20f72d59c3b398d723119a.jpg'); 
                     min-height: 500px;
                     background-size: cover;
@@ -68,8 +120,8 @@
             <div class="col-md-6 p-5" style="background-color: var(--color-cream);">
                 
                 <div class="text-center mb-5">
-                    <h2 class="font-logo text-maroon" style="font-size: 2.5rem; letter-spacing: 1px;">
-                        Login
+                    <h2 class="font-logo text-maroon logo-jiggle" style="font-size: 2.5rem; letter-spacing: 1px;">
+                        Login 
                     </h2>
                 </div>
 
@@ -105,7 +157,7 @@
                     </div>
 
                     <div class="d-flex justify-content-end mb-4">
-                        <a href="#" class="text-sm fw-semibold text-maroon text-decoration-none hover:text-dark-brown">
+                        <a href="#" class="text-sm fw-semibold text-maroon text-decoration-none hover:text-dark-brown transition-colors">
                             Forgot password?
                         </a>
                     </div>
@@ -121,7 +173,7 @@
 
                 <p class="mt-4 text-center text-sm text-dark-brown">
                     Don't have an account? 
-                    <a href="{{url('/auth/register')}}" class="fw-bold text-maroon text-decoration-none hover:text-dark-brown">
+                    <a href="{{url('/auth/register')}}" class="fw-bold text-maroon text-decoration-none hover:text-dark-brown transition-colors">
                         Sign up for free
                     </a>
                 </p>

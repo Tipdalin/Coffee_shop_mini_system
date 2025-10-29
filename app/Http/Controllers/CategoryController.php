@@ -12,13 +12,13 @@ class CategoryController extends Controller
     {
         $categories = Category::latest()->paginate(10);
 
-        return view('dashboard.categories.index', compact('categories'));
+        return view('admin.categories.index', compact('categories'));
     }
 
     
     public function create()
     {
-        return view('dashboard.categories.create');
+        return view('admin.categories.create');
     }
 
     
@@ -37,7 +37,7 @@ class CategoryController extends Controller
     
     public function edit(Category $category)
     {
-        return view('dashboard.categories.edit', compact('category'));
+        return view('admin.categories.edit', compact('category'));
     }
 
     

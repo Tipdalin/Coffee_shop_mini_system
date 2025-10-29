@@ -1,0 +1,170 @@
+/* public/css/custom.css */
+
+/* --- Font Import (Example) --- */
+@import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans:wght@400;700&display=swap');
+
+:root {
+    --primary-maroon: #801C1C; /* Deep Red/Maroon */
+    --accent-cream: #FFF8E1; /* Light Cream/Yellow-ish White */
+    --text-dark: #333;
+    --text-light: #fff;
+    --product-bg: #FFFFFF;
+}
+
+body {
+    font-family: 'Balsamiq Sans', cursive;
+    background-color: var(--accent-cream);
+}
+
+/* --- Layout Wrappers --- */
+.page-wrapper {
+    max-width: 1400px;
+    margin: auto;
+}
+
+.menu-col .menu-container {
+    background-color: var(--accent-cream);
+    border-radius: 25px; /* Large outer corner radius */
+    padding: 30px !important;
+}
+
+/* --- Header Styling --- */
+.header-bar {
+    background-color: var(--accent-cream);
+    /* Apply a similar shadow or style if it's integrated */
+}
+.brand-text {
+    color: var(--primary-maroon) !important;
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+.search-form {
+    position: relative;
+    max-width: 300px;
+}
+.search-input {
+    border-radius: 50px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    height: 40px;
+    padding-right: 40px; /* Space for button */
+}
+.search-btn {
+    position: absolute;
+    right: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--primary-maroon);
+    background: none;
+    border: none;
+}
+.icon-nav .nav-link {
+    color: var(--text-dark);
+}
+.icon-nav .nav-link i {
+    font-size: 1.2rem;
+}
+.cart-link {
+    color: var(--primary-maroon) !important;
+}
+
+/* --- Category Tabs --- */
+.category-btn {
+    background-color: var(--accent-cream);
+    color: var(--text-dark);
+    border-radius: 15px;
+    padding: 10px 25px;
+    margin-right: 15px;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+}
+.category-btn.active {
+    background-color: var(--primary-maroon);
+    color: var(--text-light);
+    box-shadow: 4px 4px 8px rgba(0,0,0,0.2);
+}
+
+/* --- Product Cards --- */
+.product-card {
+    border: none;
+    border-radius: 15px;
+    overflow: hidden;
+    background-color: var(--product-bg);
+}
+.product-card .card-body {
+    padding: 15px;
+    position: relative;
+}
+.product-category-tab {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 5px 15px;
+    border-top-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    color: var(--text-light);
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+.coffee-bg, .noncoffee-bg, .snack-bg {
+    background-color: var(--primary-maroon); /* Use primary color for simplicity */
+}
+
+.product-image-container {
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+    /* Placeholder styles for images */
+}
+.product-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+.product-price {
+    color: var(--primary-maroon);
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+.product-action-btn i {
+    color: var(--primary-maroon);
+    font-size: 1.3rem;
+    margin-left: 8px;
+}
+
+/* --- Order Sidebar --- */
+.order-sidebar {
+    background-color: var(--primary-maroon);
+    color: var(--text-light);
+    border-radius: 25px;
+}
+.order-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--text-light);
+}
+
+.order-item {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+}
+.item-name {
+    font-weight: bold;
+}
+.item-price {
+    font-weight: bold;
+}
+.order-summary hr {
+    border-color: rgba(255, 255, 255, 0.5);
+}
+.total-line .total-price {
+    font-size: 1.5rem;
+}
+
+.pay-now-btn {
+    background-color: var(--accent-cream);
+    color: var(--primary-maroon);
+    font-weight: 700;
+    border-radius: 10px;
+}

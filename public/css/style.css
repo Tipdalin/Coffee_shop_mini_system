@@ -1,83 +1,102 @@
+/* Color Variables */
 :root {
-    --maroon: #800000;
-    --maroon-light: #fbe6e6;
-    --wheat: #F5F5D9;
-    --dark-brown: #3e2723;
+    --maroon: #A6003E; /* Primary action color */
+    --maroon-dark: #7a0019;
+    --dark-brown: #333333; /* For text and headings */
+    --bg-light: #f4f7f9; /* Soft dashboard background */
+    --shadow-light: 0 4px 12px rgba(0, 0, 0, 0.08); /* Soft container shadow */
+    --shadow-deep: 0 6px 12px rgba(166, 0, 62, 0.4); /* Button action shadow */
 }
 
+/* Global Styles */
 body {
-    background-color: #ffffff;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-.dashboard-wrapper {
-    display: flex;
+    background-color: var(--bg-light);
+    font-family: 'Inter', sans-serif;
     min-height: 100vh;
+    color: var(--dark-brown);
 }
 
-/* Sidebar Styles */
-.sidebar {
-    width: 280px;
-    background-color: #ffffff;
-    padding: 2rem;
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.05);
-    flex-shrink: 0;
+/* Layout Wrapper for Sidebar + Content */
+#wrapper {
+    display: flex;
 }
 
+/* Cards & Containers */
+.stat-card {
+    border-radius: 20px; /* Large radius for modern feel */
+    box-shadow: var(--shadow-light);
+    border: none;
+    overflow: hidden;
+}
+
+/* Primary Button Style */
+.btn-maroon {
+    background-color: var(--maroon);
+    color: white;
+    border: none;
+    padding: 10px 24px;
+    border-radius: 50px; /* Pill shape */
+    transition: all 0.2s ease-in-out;
+    box-shadow: 0 4px 6px rgba(166, 0, 62, 0.3);
+}
+.btn-maroon:hover {
+    background-color: var(--maroon-dark);
+    box-shadow: var(--shadow-deep);
+    transform: translateY(-1px);
+    color: white;
+}
+
+/* Typography & Forms */
 .dashboard-title {
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: var(--dark-brown);
+    font-weight: 800;
+    letter-spacing: -1px;
 }
-
 .text-maroon {
     color: var(--maroon) !important;
 }
-
-.bg-maroon {
-    background-color: var(--maroon) !important;
+.form-control, .form-select, .form-label {
+    font-size: 0.95rem;
 }
 
-.bg-maroon-light {
-    background-color: var(--maroon-light) !important;
+/* Navbar Specific Styles */
+.custom-navbar {
+    background-color: #ffffff !important; 
+    box-shadow: var(--shadow-light); 
+    border-radius: 0 0 20px 20px; 
+    padding-top: 1rem !important;
+    padding-bottom: 1rem !important;
+    z-index: 1020; /* Ensure it stays above content but below modals */
 }
-
-.btn-maroon {
-    background-color: var(--maroon);
+.navbar-toggle-btn {
+    border: 1px solid #e0e0e0;
+    background-color: var(--bg-light);
+    transition: all 0.2s;
+    padding: 8px 12px;
+    border-radius: 12px; 
+}
+.navbar-toggle-btn:hover {
     border-color: var(--maroon);
-    color: #F5F5D9;
+    background-color: #ffffff;
 }
-
-.btn-maroon:hover {
-    background-color: #6a0000;
-    border-color: #6a0000;
+.navbar-icon-btn {
+    color: var(--dark-brown);
+    background-color: var(--bg-light);
+    transition: all 0.2s;
+    padding: 0.65rem;
+    border-radius: 50%; 
+}
+.navbar-icon-btn:hover {
+    background-color: var(--maroon);
     color: white;
 }
-
-.btn-outline-maroon {
-    color: var(--maroon);
-    border-color: var(--maroon);
-}
-
-.btn-outline-maroon:hover {
+.profile-icon-wrapper {
+    width: 40px; 
+    height: 40px;
     background-color: var(--maroon);
     color: white;
-}
-
-.text-dark-brown {
-    color: var(--dark-brown) !important;
-}
-
-/* Main Content Styles */
-.main-content {
-    flex-grow: 1;
-}
-
-/* Card Styles */
-.stat-card {
-    border: none;
-    border-radius: 1rem;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-}
-
-.border-dashed {
-    border-style: dashed !important;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
